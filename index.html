@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickKompakt - Smart Affiliate Solutions</title>
+    <title>ClickKompakt | Build Your Business with Free AI Tools</title>
     <style>
+        /* --- FUTURISTIC DESIGN SYSTEM --- */
         :root {
             --bg-main: #060913;
             --bg-card: rgba(15, 22, 42, 0.65);
@@ -17,186 +18,272 @@
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             overflow-x: hidden;
-            position: relative;
+            line-height: 1.6;
         }
 
-        /* Hintergrund-Effekt */
-        body::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            background: 
-                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.05) 0%, transparent 50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        main {
-            flex: 1;
+        .navbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(6, 9, 19, 0.75);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            z-index: 1000;
         }
 
-        .container {
-            max-width: 550px;
-            width: 100%;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logo-area {
-            margin-bottom: 2.5rem;
-        }
-
-        .logo-text {
-            font-size: 2.5rem;
+        .logo {
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -1px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo span {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
         }
 
-        .tagline {
-            color: var(--text-muted);
-            font-size: 1rem;
-            max-width: 80%;
-            margin: 0 auto;
+        .hero {
+            max-width: 1100px;
+            margin: 6rem auto 4rem auto;
+            text-align: center;
+            padding: 0 1.5rem;
         }
 
-        .offer-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .offer-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .offer-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
         }
 
-        .cta-button {
-            display: block;
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            background: var(--gradient-primary);
+            color: #060913;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+            display: inline-block;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 242, 254, 0.35);
+        }
+
+        .card-image-wrapper {
+            position: relative;
             width: 100%;
-            padding: 1.2rem;
+            height: 180px;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(6, 9, 19, 0.9);
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.2rem;
+        }
+
+        .card-link {
             background: var(--gradient-primary);
             color: #060913;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 14px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
-            opacity: 0.95;
+            font-size: 0.85rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
         }
 
         footer {
-            padding: 2rem;
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            background: rgba(6, 9, 19, 0.8);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
+            padding: 4rem 2rem;
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--neon-cyan);
-        }
-
-        .copyright {
-            color: rgba(148, 163, 184, 0.4);
-            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 8rem;
         }
     </style>
 </head>
 <body>
 
-    <main>
-        <div class="container">
-            <div class="logo-area">
-                <div class="logo-text">ClickKompakt</div>
-                <p class="tagline">Your gateway to powerful digital products and global affiliate access.</p>
-            </div>
+    <nav class="navbar">
+        <a href="#" class="logo" translate="no">Click<span>Kompakt</span></a>
+    </nav>
 
-            <div class="offer-card">
-                <h2 class="offer-title">Premium Affiliate Access</h2>
-                <p class="offer-desc">Get instant access to top-tier digital educational materials and automated systems designed to scale.</p>
-                <a href="https://www.digistore24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button" target="_blank" rel="noopener">Access System Now</a>
+    <header class="hero">
+        <h1>Leverage Free AI Tools.<br><span>Build a Global Business.</span></h1>
+        <p>Free tools like ChatGPT, Canva Free, and AI video generators are incredibly powerful. We show you how to combine these zero-cost tools to generate digital income without any upfront capital.</p>
+        <a href="#strategies" class="btn">Explore AI Strategies ↓</a>
+    </header>
+
+    <main class="section-container" id="strategies">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>Monetize Free AI Software</h2>
+                <p>Select a free tool and access the ultimate blueprint to scale it globally.</p>
             </div>
+        </div>
+
+        <div class="grid">
+            <!-- BOX 1: Rank in ChatGPT -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">ChatGPT Profits</span>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="ChatGPT">
+                </div>
+                <div class="card-content">
+                    <h3>1. ChatGPT Ranking System</h3>
+                    <p>Master how to use ChatGPT to create viral text assets. To tap into massive high-ticket dollar streams, leverage the elite "Rank in ChatGPT" blueprint and find out how businesses pay premium rates for optimized AI content.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--neon-violet);">High Income</span>
+                        <a href="https://www.digistore24.com/redir/676823/enricoschmidt3500287/" class="card-link" target="_blank">Get Blueprint →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- BOX 2: 500+ AI Money Prompts -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">Canva & Prompts</span>
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Canva">
+                </div>
+                <div class="card-content">
+                    <h3>2. Canva & AI Prompt Mastery</h3>
+                    <p>Combine Canva's free design dashboard with ready-to-use premium AI prompts. This bundle gives you 500+ proven formulas to craft outstanding visual templates and automated assets that clients instantly buy.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--neon-violet);">Best Seller</span>
+                        <a href="https://www.checkout-ds24.com/redir/689417/enricoschmidt3500287/" class="card-link" target="_blank">View Bundle →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- BOX 3: The AI Flex Blueprint -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">AI Automation</span>
+                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="Video AI">
+                </div>
+                <div class="card-content">
+                    <h3>3. The Ultimate AI Flex System</h3>
+                    <p>Ready for the biggest leap? Learn how to connect free video tools and automated systems into a serious online agency. Build real, flexible income streams with zero tech experience using this top-tier blueprint.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--neon-violet);">Premium Guide</span>
+                        <a href="https://www.digistore24.com/redir/496173/enricoschmidt3500287/" class="card-link" target="_blank">Start Learning →</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="legal.html">Legal Notice (Impressum)</a>
-            <a href="privacy.html">Privacy Policy</a>
-        </div>
-        <div class="copyright">
-            &copy; 2026 ClickKompakt. All rights reserved.
-        </div>
+        <p>&copy; 2026 ClickKompakt. All rights reserved.</p>
     </footer>
-
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca414f-369e-4e5b-bdb8-031dc139d733"></script>
 
 </body>
 </html>
