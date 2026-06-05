@@ -67,6 +67,12 @@
             backdrop-filter: blur(20px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-area {
@@ -150,6 +156,7 @@
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.85rem;
+            transition: color 0.2s ease;
         }
 
         .footer-links a:hover {
@@ -174,7 +181,7 @@
             <div class="offer-card">
                 <h2 class="offer-title">Premium Affiliate Access</h2>
                 <p class="offer-desc">Get instant access to top-tier digital educational materials and automated systems designed to scale.</p>
-                <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button" target="_blank" rel="noopener">Access System Now</a>
+                <a href="https://www.digistore24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button" target="_blank" rel="noopener">Access System Now</a>
             </div>
         </div>
     </main>
@@ -189,7 +196,6 @@
         </div>
     </footer>
 
-    <!-- UMAMI TRACKING CODE -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca414f-369e-4e5b-bdb8-031dc139d733"></script>
 
 </body>
