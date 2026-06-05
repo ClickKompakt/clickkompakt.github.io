@@ -3,174 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickKompakt | AI for Beginners in 2026</title>
+    <title>ClickKompakt | Premium AI Tool Reviews & Hub</title>
     <style>
+        /* --- FUTURISTIC DESIGN SYSTEM --- */
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151c2c;
-            --text-color: #f3f4f6;
-            --accent-color: #00f2fe;
-            --muted-text: #9ca3af;
+            --bg-main: #060913;
+            --bg-card: rgba(15, 22, 42, 0.65);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            
+            /* Neon Glow Palette */
+            --neon-cyan: #00f2fe;
+            --neon-violet: #9d4edd;
+            --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%);
+            --glow-cyan: rgba(0, 242, 254, 0.15);
+            --glow-violet: rgba(157, 78, 221, 0.25);
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+
+        /* --- BASE STYLES --- */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
             line-height: 1.6;
         }
-        header {
-            border-bottom: 1px solid #1e293b;
-            padding: 1.5rem 2rem;
+
+        /* --- DECORATIVE BACKGROUND GLOWS --- */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            filter: blur(140px);
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        body::before { top: -100px; right: -50px; }
+        body::after { top: 600px; left: -100px; }
+
+        /* --- STYLISH NAVBAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(6, 9, 19, 0.75);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
         }
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             color: #fff;
-        }
-        .logo span {
-            color: var(--accent-color);
-        }
-        nav a {
-            color: var(--muted-text);
             text-decoration: none;
-            margin-left: 1.5rem;
-            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-        nav a:hover {
-            color: var(--accent-color);
+
+        .logo span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-cyan);
+        }
+
+        /* Underline Animation Effect */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background: var(--gradient-primary);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* --- HERO SECTION WITH GLOW --- */
         .hero {
-            max-width: 900px;
-            margin: 5rem auto;
+            max-width: 1100px;
+            margin: 6rem auto 4rem auto;
             text-align: center;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
+            position: relative;
         }
+
+        /* Ambient Center Light */
+        .hero-glow {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 120px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+            filter: blur(90px);
+            opacity: 0.22;
+            z-index: -1;
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
         }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .hero p {
-            font-size: 1.25rem;
-            color: var(--muted-text);
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
         }
-        .cta-btn {
-            background: linear-gradient(45deg, #0072ff, var(--accent-color));
-            color: #000;
-            padding: 0.75rem 2rem;
+
+        /* Buttons Framework */
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            font-size: 1rem;
+            font-weight: 600;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
         }
-        .cta-btn:hover {
-            transform: scale(1.05);
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #060913;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 242, 254, 0.45);
         }
-        .section-title {
-            font-size: 1.75rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.75rem;
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
+
+        .btn-secondary:hover {
+            border-color: var(--neon-violet);
+            background: rgba(157, 78, 221, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--glow-violet);
+        }
+
+        /* --- CARDS SECTION (TOP AI TOOLS) --- */
+        .section-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        /* Premium Grid System */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
         }
+
+        /* Interactive Cards Mechanics */
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 2rem;
-            transition: border-color 0.3s;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
         }
-        .card:hover {
-            border-color: var(--accent-color);
+
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
         }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(6, 9, 19, 0.8);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
         .card h3 {
-            margin-top: 0;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            transition: color 0.3s;
         }
+
         .card p {
-            color: var(--muted-text);
+            color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
-        .card a {
-            color: var(--accent-color);
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.2rem;
+            margin-top: auto;
+        }
+
+        .rating {
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-link {
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
         }
+
+        /* --- THE MAGIC HOVER EFFORTS --- */
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(0, 242, 254, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.08), 0 0 25px rgba(157, 78, 221, 0.1);
+        }
+
+        .card:hover .card-image-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .card:hover h3 {
+            color: var(--neon-cyan);
+        }
+
+        .card-link:hover {
+            color: var(--neon-cyan);
+        }
+
+        /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            color: var(--muted-text);
-            font-size: 0.85rem;
-            border-top: 1px solid #1e293b;
-            margin-top: 5rem;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 8rem;
+            background: rgba(3, 5, 11, 0.6);
+        }
+
+        footer span {
+            color: var(--neon-cyan);
+        }
+
+        /* RESPONSIVE DESIGN (FOR MOBILE DEVICES) */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem; }
+            .nav-links { display: none; } /* Kept simple for code length */
+            .hero h1 { font-size: 2.6rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .btn { width: 100%; text-align: center; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Click<span>Kompakt</span></div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#guides">Guides</a>
-            <a href="#reviews">Reviews</a>
-        </nav>
+    <!-- STYLISH NAVBAR -->
+    <nav class="navbar">
+        <a href="#" class="logo">Click<span>Kompakt</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#tools">Top Tools</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Our Method</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SEKTION -->
+    <header class="hero">
+        <div class="hero-glow"></div>
+        <h1>The Best Free AI Tools.<br><span>No Hype. No Cost.</span></h1>
+        <p>We test and filter the noise. Discover powerful, production-ready AI tools you can use right now in 2026 without breaking the bank.</p>
+        <div class="hero-buttons">
+            <a href="#tools" class="btn btn-primary">Explore Free Tools</a>
+            <a href="#" class="btn btn-secondary">Read AI Reviews</a>
+        </div>
     </header>
 
-    <div class="hero">
-        <h1>Master AI in 2026. Without Spending a Cent.</h1>
-        <p>Simple, straight-to-the-point tutorials and tool reviews for absolute beginners worldwide. No coding required.</p>
-        <a href="#guides" class="cta-btn">Start Learning Free Tools</a>
-    </div>
-
-    <div class="container" id="guides">
-        <h2 class="section-title">Latest Step-by-Step Guides</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Best Free AI Tools in 2026 for Beginners</h3>
-                <p>Our complete, tested guide to the most useful free AI tools available right now. Skip the noise and learn what actually works.</p>
-                <a href="#">Read Guide →</a>
-            </div>
-            <div class="card">
-                <h3>Google Gemini vs ChatGPT: 2026 Edition</h3>
-                <p>A head-to-head comparison to help you choose the best ecosystem for your daily productivity and creative work.</p>
-                <a href="#">Read Guide →</a>
+    <!-- TOP AI TOOLS SEKTION -->
+    <main class="section-container" id="tools">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>Top AI Tools of the Month</h2>
+                <p>Hand-tested, fully functional free tiers. Verified for June 2026.</p>
             </div>
         </div>
-    </div>
 
-    <div class="container" id="reviews">
-        <h2 class="section-title">Honest Reviews & Recommendations</h2>
         <div class="grid">
-            <div class="card">
-                <h3>ChatGPT Free Tier - Complete Review</h3>
-                <p>Is the free version still worth your time this year? We break down the limitations, upgrades, and hidden features.</p>
-                <a href="#">Read Review →</a>
-            </div>
-        </div>
-    </div>
+            <!-- CARD 1 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">Free Tier</span>
+                    <!-- Unsplash Tech/AI Placeholder 1 -->
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Abstract AI Interface">
+                </div>
+                <div class="card-content">
+                    <h3>NeuroScribe AI</h3>
+                    <p>An incredible open-source alternative for long-form copywriting and formatting. The free plan gives you full access to premium tokens monthly.</p>
+                    <div class="card-footer">
+                        <div class="rating">★ 4.9 <span>(Editor's Choice)</span></div>
+                        <a href="#" class="card-link">Read Review →</a>
+                    </div>
+                </div>
+            </article>
 
+            <!-- CARD 2 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">Freemium</span>
+                    <!-- Unsplash Tech/AI Placeholder 2 -->
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="Neural Network Graphic">
+                </div>
+                <div class="card-content">
+                    <h3>PixelForge Video</h3>
+                    <p>Generate highly realistic 5-second b-roll sequences using text prompts. The free tier gives you 30 generation credits every single week.</p>
+                    <div class="card-footer">
+                        <div class="rating">★ 4.7 <span>(Video)</span></div>
+                        <a href="#" class="card-link">Read Review →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">100% Free</span>
+                    <!-- Unsplash Tech/AI Placeholder 3 -->
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80" alt="Futuristic Cyberpunk Code">
+                </div>
+                <div class="card-content">
+                    <h3>KompaktCoder Pro</h3>
+                    <p>A lightning-fast local AI autocomplete extension designed for beginner developers. Completely free, privacy-focused, and requires no cloud setup.</p>
+                    <div class="card-footer">
+                        <div class="rating">★ 4.8 <span>(Coding)</span></div>
+                        <a href="#" class="card-link">Read Review →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 ClickKompakt. Independent AI Education. Built with full control.</p>
+        <p>&copy; 2026 <span>ClickKompakt</span>. Independent AI Research & Value Education. All rights reserved.</p>
     </footer>
 
 </body>
