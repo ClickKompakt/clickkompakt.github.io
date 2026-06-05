@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickKompakt | Premium AI Tool Reviews & Hub</title>
+    <title>ClickKompakt | Smarte Systeme für dein Online-Business</title>
     <style>
         /* --- FUTURISTIC DESIGN SYSTEM --- */
         :root {
@@ -17,8 +17,6 @@
             --neon-cyan: #00f2fe;
             --neon-violet: #9d4edd;
             --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%);
-            --glow-cyan: rgba(0, 242, 254, 0.15);
-            --glow-violet: rgba(157, 78, 221, 0.25);
         }
 
         /* --- BASE STYLES --- */
@@ -36,22 +34,6 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-
-        /* --- DECORATIVE BACKGROUND GLOWS --- */
-        body::before, body::after {
-            content: '';
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            filter: blur(140px);
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-        body::before { top: -100px; right: -50px; }
-        body::after { top: 600px; left: -100px; }
 
         /* --- STYLISH NAVBAR --- */
         .navbar {
@@ -71,12 +53,8 @@
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #fff;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: #fff;
         }
 
         .logo span {
@@ -85,72 +63,18 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--neon-cyan);
-        }
-
-        /* Underline Animation Effect */
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -6px;
-            left: 0;
-            background: var(--gradient-primary);
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-
-        .nav-links a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* --- HERO SECTION WITH GLOW --- */
+        /* --- HERO SECTION --- */
         .hero {
             max-width: 1100px;
             margin: 6rem auto 4rem auto;
             text-align: center;
             padding: 0 1.5rem;
-            position: relative;
-        }
-
-        /* Ambient Center Light */
-        .hero-glow {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 120px;
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet));
-            filter: blur(90px);
-            opacity: 0.22;
-            z-index: -1;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            line-height: 1.15;
-            letter-spacing: -1.5px;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
         }
 
@@ -161,18 +85,10 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 2.5rem auto;
-        }
-
-        /* Buttons Framework */
-        .hero-buttons {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            align-items: center;
         }
 
         .btn {
@@ -181,35 +97,13 @@
             font-weight: 600;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-        }
-
-        .btn-primary {
             background: var(--gradient-primary);
             color: #060913;
             box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+            display: inline-block;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 242, 254, 0.45);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--neon-violet);
-            background: rgba(157, 78, 221, 0.05);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px var(--glow-violet);
-        }
-
-        /* --- CARDS SECTION (TOP AI TOOLS) --- */
+        /* --- CARDS SECTION --- */
         .section-container {
             max-width: 1200px;
             margin: 6rem auto;
@@ -217,16 +111,12 @@
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
             margin-bottom: 3rem;
         }
 
         .section-title h2 {
             font-size: 2rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
         }
 
         .section-title p {
@@ -234,53 +124,50 @@
             margin-top: 0.3rem;
         }
 
-        /* Premium Grid System */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2.5rem;
         }
 
-        /* Interactive Cards Mechanics */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 242, 254, 0.35);
         }
 
         .card-image-wrapper {
             position: relative;
             width: 100%;
-            height: 200px;
-            overflow: hidden;
+            height: 180px;
         }
 
         .card-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
         .card-badge {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: rgba(6, 9, 19, 0.8);
-            border: 1px solid var(--neon-cyan);
-            color: var(--neon-cyan);
+            background: rgba(6, 9, 19, 0.9);
+            border: 1px solid var(--neon-violet);
+            color: #fff;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .card-content {
@@ -291,10 +178,8 @@
         }
 
         .card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
+            font-size: 1.3rem;
             margin-bottom: 0.7rem;
-            transition: color 0.3s;
         }
 
         .card p {
@@ -310,162 +195,100 @@
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 1.2rem;
-            margin-top: auto;
-        }
-
-        .rating {
-            color: #f59e0b;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
         }
 
         .card-link {
-            color: #fff;
+            background: var(--gradient-primary);
+            color: #060913;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
         }
 
-        /* --- THE MAGIC HOVER EFFECTS --- */
-        .card:hover {
-            transform: translateY(-8px) scale(1.01);
-            border-color: rgba(0, 242, 254, 0.35);
-            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.08), 0 0 25px rgba(157, 78, 221, 0.1);
-        }
-
-        .card:hover .card-image-wrapper img {
-            transform: scale(1.06);
-        }
-
-        .card:hover h3 {
-            color: var(--neon-cyan);
-        }
-
-        .card-link:hover {
-            color: var(--neon-cyan);
-        }
-
-        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 4rem 2rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
             margin-top: 8rem;
-            background: rgba(3, 5, 11, 0.6);
-        }
-
-        footer span {
-            color: var(--neon-cyan);
-        }
-
-        /* RESPONSIVE DESIGN (FOR MOBILE DEVICES) */
-        @media (max-width: 768px) {
-            .navbar { padding: 1rem; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.6rem; }
-            .hero p { font-size: 1.1rem; }
-            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
-            .btn { width: 100%; text-align: center; }
-            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- STYLISH NAVBAR (Protected Name) -->
     <nav class="navbar">
         <a href="#" class="logo" translate="no">Click<span>Kompakt</span></a>
-        <ul class="nav-links">
-            <li><a href="#">Heim</a></li>
-            <li><a href="#tools">Top-Werkzeuge</a></li>
-            <li><a href="#">Kategorien</a></li>
-            <li><a href="#">Unsere Methode</a></li>
-        </ul>
     </nav>
 
-    <!-- HERO SEKTION -->
     <header class="hero">
-        <div class="hero-glow"></div>
-        <h1>Die besten kostenlosen KI-Tools.<br><span>Ohne Schnickschnack. Kostenlos.</span></h1>
-        <p>Wir testen und filtert die irrelevanten Informationen. Entdecken Sie leistungsstarke, produktionsreife KI-Tools, die Sie schon heute im Jahr 2026 einsetzen können, ohne Ihr Budget zu sprengen.</p>
-        <div class="hero-buttons">
-            <a href="#tools" class="btn btn-primary">Entdecken Sie kostenlose Tools</a>
-            <a href="#" class="btn btn-secondary">Lesen Sie KI-Bewertungen</a>
-        </div>
+        <h1>Smarte Business-Systeme.<br><span>Aktualisiert für 2026.</span></h1>
+        <p>Du möchtest dir ein digitales Standbein aufbauen, weißt aber nicht, wo du anfangen sollst? Entdecke brandneue Strategien, kostenfreie System-Analysen und sofort einsatzbereite Workbooks, die dir den klaren roten Faden zeigen.</p>
+        <a href="#systeme" class="btn">Zu den Systemen ↓</a>
     </header>
 
-    <!-- TOP AI TOOLS SEKTION -->
-    <main class="section-container" id="tools">
+    <main class="section-container" id="systeme">
         <div class="section-header">
             <div class="section-title">
-                <h2>Die besten KI-Tools des Monats</h2>
-                <p>Manuell getestet, voll funktionsfähige Gratisversionen. Geprüft für Juni 2026.</p>
+                <h2>Deine Einstiegsmöglichkeiten</h2>
+                <p>Nutze kostenlose Analysen oder starte direkt mit praxiserprobten Strategien.</p>
             </div>
         </div>
 
         <div class="grid">
-            <!-- CARD 1 -->
-            <article class="card">
-                <div class="card-image-wrapper">
-                    <span class="card-badge">Kostenloses Modell</span>
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Abstract AI Interface">
-                </div>
-                <div class="card-content">
-                    <h3>NeuroScribe KI</h3>
-                    <p>Eine fantastische Open-Source-Alternative für das Verfassen und Formatieren längerer Texte. Mit dem kostenlosen Plan erhalten Sie monatlich vollen Zugriff auf Premium-Token.</p>
-                    <div class="card-footer">
-                        <div class="rating">★ 4.9 <span>(Empfehlung)</span></div>
-                        <a href="#" class="card-link">Review lesen →</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CARD 2 -->
-            <article class="card">
-                <div class="card-image-wrapper">
-                    <span class="card-badge">Freemium</span>
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="Neural Network Graphic">
-                </div>
-                <div class="card-content">
-                    <h3>PixelForge-Video</h3>
-                    <p>Erstellen Sie mithilfe von Textvorgaben hochrealistische 5-Sekunden-B-Roll-Sequenzen. Die kostenlose Version bietet Ihnen jede Woche 30 Generierungs-Credits.</p>
-                    <div class="card-footer">
-                        <div class="rating">★ 4.7 <span>(Video)</span></div>
-                        <a href="#" class="card-link">Review lesen →</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CARD 3 -->
+            <!-- CARD 1: Möglichkeit A (Aus image_99f2e2.png) -->
             <article class="card">
                 <div class="card-image-wrapper">
                     <span class="card-badge">100% Kostenlos</span>
-                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80" alt="Futuristic Cyberpunk Code">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Analyse">
                 </div>
                 <div class="card-content">
-                    <h3>KompaktCoder Pro</h3>
-                    <p>Eine blitzschnelle lokale KI-Autovervollständigungserweiterung, speziell für Einsteiger in die Softwareentwicklung. Vollkommen kostenlos und datenschutzfreundlich.</p>
+                    <h3>2 Minuten Online-Business System-Analyse</h3>
+                    <p>Finde in nur zwei Minuten heraus, welche digitale Business-Infrastruktur wirklich zu dir passt. Dieses kostenfreie Test-Tool analysiert deine Stärken und leitet dich direkt zum passenden System-Konzept weiter.</p>
                     <div class="card-footer">
-                        <div class="rating">★ 4.8 <span>(Coding)</span></div>
-                        <a href="#" class="card-link">Review lesen →</a>
+                        <span style="font-size: 0.85rem; color: var(--neon-cyan);">Gratis Testen</span>
+                        <a href="https://www.digistore24.com/content/679185/5089/enricoschmidt3500287/" class="card-link" target="_blank">Jetzt analysieren →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 2: Strategie + überzeugende Worte Paket (9,90 €) -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Workbook">
+                </div>
+                <div class="card-content">
+                    <h3>Strategie + überzeugende Worte Paket</h3>
+                    <p>Das ultimative Sofortumsatz-Workbook für packende Texte und glasklare Verkaufspsychologie. Inklusive des kostenlosen Bonus-E-Books, um deine Angebote im Internet unwiderstehlich zu machen.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--neon-cyan);">Nur 9,90 €</span>
+                        <a href="https://www.digistore24.com/product/544337?aff=enricoschmidt3500287" class="card-link" target="_blank">Workbook holen →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 3: Möglichkeit B (Aus image_99f2e2.png) -->
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge">Live-Training</span>
+                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="Webinar">
+                </div>
+                <div class="card-content">
+                    <h3>Die Affili-Forge Premium Masterclass</h3>
+                    <p>Melde dich völlig kostenfrei zum automatisierten Strategie-Webinar an. Erfahre die exakte Schritt-für-Schritt-Anleitung, wie du ein nachhaltiges, wachsendes Online-Einkommen im Jahr 2026 aufbaust.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--neon-cyan);">Gratis Platz sichern</span>
+                        <a href="https://affiliforge.net/masterclass-anmeldung#aff=enricoschmidt3500287" class="card-link" target="_blank">Zum Video-Training →</a>
                     </div>
                 </div>
             </article>
         </div>
     </main>
 
-    <!-- FOOTER (Protected Name) -->
     <footer>
-        <p>&copy; 2026 <span translate="no">ClickKompakt</span>. Unabhängige KI-Forschung & Bildung. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 ClickKompakt. Alle Rechte vorbehalten.</p>
     </footer>
 
 </body>
