@@ -57,7 +57,7 @@
         }
 
         .container {
-            max-width: 650px;
+            max-width: 550px;
             width: 100%;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -69,11 +69,11 @@
         }
 
         .logo-area {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .logo-text {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -1px;
             background: var(--gradient-primary);
@@ -84,109 +84,41 @@
 
         .tagline {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        /* Filter-Bereich */
-        .filter-container {
+        .lang-block {
             margin-bottom: 2.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover {
-            color: var(--text-primary);
-            border-color: rgba(0, 242, 254, 0.4);
-        }
-
-        .filter-btn.active {
-            background: var(--gradient-primary);
-            color: #060913;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.2);
-        }
-
-        /* Produkt-Karten */
-        .product-list {
             text-align: left;
         }
 
-        .product-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s ease;
-            display: block;
-        }
-
-        .product-card.hidden {
-            display: none;
-        }
-
-        .product-card:hover {
-            border-color: rgba(0, 242, 254, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-            gap: 1rem;
-        }
-
-        .offer-title {
-            font-size: 1.25rem;
+        .lang-title {
+            font-size: 1.1rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.4rem;
             color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .lang-badge {
-            font-size: 0.75rem;
-            background: rgba(255, 255, 255, 0.06);
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            white-space: nowrap;
-        }
-
-        .offer-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.25rem;
-        }
-
-        /* Buttons */
+        /* Tasten-Styling */
         .cta-button {
             display: block;
             width: 100%;
-            padding: 0.9rem;
+            padding: 1.1rem;
             color: #060913;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1rem;
-            border-radius: 10px;
+            font-size: 1.05rem;
+            border-radius: 12px;
             transition: all 0.3s ease;
             text-align: center;
+            margin-bottom: 1rem;
         }
 
         .btn-de {
@@ -195,8 +127,8 @@
         }
 
         .btn-de:hover {
+            transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(255, 51, 0, 0.3);
-            opacity: 0.95;
         }
 
         .btn-en {
@@ -205,8 +137,8 @@
         }
 
         .btn-en:hover {
+            transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(0, 242, 254, 0.3);
-            opacity: 0.95;
         }
 
         footer {
@@ -245,75 +177,25 @@
         <div class="container">
             <div class="logo-area">
                 <div class="logo-text">ClickKompakt</div>
-                <p class="tagline">Premium AI Tools & Global Affiliate Solutions.</p>
+                <p class="tagline">Select your topic and start your automated AI system.</p>
             </div>
 
-            <div class="filter-container">
-                <button class="filter-btn active" onclick="filterCategory('all', event)">✨ Alle zeigen / Show All</button>
-                <button class="filter-btn" onclick="filterCategory('de', event)">🇩🇪 Deutsch</button>
-                <button class="filter-btn" onclick="filterCategory('en', event)">🇺🇸 English</button>
-                <button class="filter-btn" onclick="filterCategory('business', event)">💼 Business</button>
-                <button class="filter-btn" onclick="filterCategory('marketing', event)">📈 Marketing & Traffic</button>
-                <button class="filter-btn" onclick="filterCategory('copywriting', event)">✍️ Copywriting</button>
+            <div class="lang-block">
+                <div class="lang-title">🇩🇪 DEUTSCHE THEMENGEBIETE</div>
+                
+                <a href="https://www.digistore24.com/redir/676251/enricoschmidt3500287/" class="cta-button btn-de" target="_blank" rel="noopener">💼 AI-Business System</a>
+                
+                <a href="https://onlinekurse-von-experten.com/salespages-mit-claude-influ04/#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">✍️ Profitable Salespages (Claude)</a>
+                
+                <a href="https://onlinekurse-von-experten.com/?page_id=8273&preview=true#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">📈 GEO Traffic (KI-SEO)</a>
             </div>
 
-            <div class="product-list">
-
-                <div class="product-card" data-tags="de business">
-                    <div class="card-header">
-                        <h2 class="offer-title">AI-Business System™</h2>
-                        <span class="lang-badge">🇩🇪 DE</span>
-                    </div>
-                    <p class="offer-desc">Kompletter Mitgliederbereich und Video-Kurse. Lerne Schritt für Schritt, wie du mit künstlicher Intelligenz ein vollautomatisiertes Online-Business aufbaust.</p>
-                    <a href="https://www.digistore24.com/redir/676251/enricoschmidt3500287/" class="cta-button btn-de" target="_blank" rel="noopener">Zum Video-Kurs</a>
-                </div>
-
-                <div class="product-card" data-tags="de marketing">
-                    <div class="card-header">
-                        <h2 class="offer-title">Profitable Salespages mit Claude</h2>
-                        <span class="lang-badge">🇩🇪 DE</span>
-                    </div>
-                    <p class="offer-desc">Erstelle hochkonvertierende Verkaufsseiten mithilfe der KI Claude. Perfekt, um Produkte psychologisch clever im Internet zu vermarkten.</p>
-                    <a href="https://onlinekurse-von-experten.com/salespages-mit-claude-influ04/#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">Strategie freischalten</a>
-                </div>
-
-                <div class="product-card" data-tags="de marketing">
-                    <div class="card-header">
-                        <h2 class="offer-title">GEO Traffic – SEO im KI-Zeitalter</h2>
-                        <span class="lang-badge">🇩🇪 DE</span>
-                    </div>
-                    <p class="offer-desc">Der neue Standard für Reichweite. Erfahre, wie du deine Projekte so optimierst, dass sie direkt von KI-Suchmaschinen empfohlen werden.</p>
-                    <a href="https://onlinekurse-von-experten.com/?page_id=8273&preview=true#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">Traffic-System starten</a>
-                </div>
-
-                <div class="product-card" data-tags="en business">
-                    <div class="card-header">
-                        <h2 class="offer-title">Premium Affiliate Access</h2>
-                        <span class="lang-badge">🇺🇸 EN</span>
-                    </div>
-                    <p class="offer-desc">Get instant access to top-tier digital educational materials and automated systems designed to scale globally using AI technology.</p>
-                    <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">Access System Now</a>
-                </div>
-
-                <div class="product-card" data-tags="en marketing">
-                    <div class="card-header">
-                        <h2 class="offer-title">The AI Marketing Academy</h2>
-                        <span class="lang-badge">🇺🇸 EN</span>
-                    </div>
-                    <p class="offer-desc">Master global social media algorithms using AI creation tools. Learn how to generate viral content and massive traffic completely automated.</p>
-                    <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">Start Marketing Course</a>
-                </div>
-
-                <div class="product-card" data-tags="en copywriting">
-                    <div class="card-header">
-                        <h2 class="offer-title">Automated Sales Copy with Claude</h2>
-                        <span class="lang-badge">🇺🇸 EN</span>
-                    </div>
-                    <p class="offer-desc">Unlock advanced prompts for Claude to write professional, psychology-driven sales copies, emails, and video scripts that convert viewers into buyers.</p>
-                    <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">Unlock Copywriting Prompts</a>
-                </div>
-
+            <div class="lang-block">
+                <div class="lang-title">🇺🇸 ENGLISH TOPICS</div>
+                
+                <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">💼 Premium Affiliate Access</a>
             </div>
+
         </div>
     </main>
 
@@ -326,30 +208,6 @@
             &copy; 2026 ClickKompakt. All rights reserved.
         </div>
     </footer>
-
-    <script>
-        function filterCategory(category, event) {
-            // Alle Buttons deaktivieren
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Geklickten Button aktivieren
-            event.target.classList.add('active');
-            
-            // Alle Karten heraussuchen
-            const cards = document.querySelectorAll('.product-card');
-            
-            cards.forEach(card => {
-                const tags = card.getAttribute('data-tags').split(' ');
-                
-                if (category === 'all' || tags.includes(category)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-    </script>
 
     <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca414f-369e-4e5b-bdb8-031dc139d733"></script>
 
