@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickKompakt - Global AI Solutions</title>
+    <title>ClickKompakt - Global AI Hub</title>
     <style>
         :root {
             --bg-main: #060913;
@@ -14,7 +14,6 @@
             --neon-cyan: #00f2fe;
             --neon-violet: #9d4edd;
             --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%);
-            --gradient-de: linear-gradient(135deg, #ff9900 0%, #ff0000 100%);
         }
 
         * {
@@ -58,7 +57,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -88,90 +87,84 @@
             font-size: 1rem;
         }
 
-        /* Sektionen für die Sprachen */
-        .language-section {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 2rem 1.5rem;
-            margin-bottom: 2rem;
+        /* Sprach-Hauptbereiche */
+        .lang-block {
+            margin-bottom: 3rem;
             text-align: left;
-            position: relative;
         }
 
-        .lang-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
+        .lang-title {
             font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.2rem 0.6rem;
-            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Einzelne Produkt-Karten */
+        .product-card {
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .product-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            transform: translateY(-2px);
         }
 
         .offer-title {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
-            padding-right: 3rem;
         }
 
         .offer-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .bullets {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .bullets li {
             font-size: 0.9rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
         }
 
         /* Buttons */
         .cta-button {
             display: block;
             width: 100%;
-            padding: 1.1rem;
+            padding: 0.9rem;
             color: #060913;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.05rem;
-            border-radius: 12px;
+            font-size: 1rem;
+            border-radius: 10px;
             transition: all 0.3s ease;
             text-align: center;
         }
 
         .btn-de {
             background: linear-gradient(135deg, #ffcc00 0%, #ff3300 100%);
-            box-shadow: 0 4px 15px rgba(255, 51, 0, 0.25);
+            box-shadow: 0 4px 12px rgba(255, 51, 0, 0.15);
         }
 
         .btn-de:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 51, 0, 0.4);
+            box-shadow: 0 6px 18px rgba(255, 51, 0, 0.3);
             opacity: 0.95;
         }
 
         .btn-en {
             background: var(--gradient-primary);
-            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.15);
         }
 
         .btn-en:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+            box-shadow: 0 6px 18px rgba(0, 242, 254, 0.3);
             opacity: 0.95;
         }
 
@@ -211,34 +204,41 @@
         <div class="container">
             <div class="logo-area">
                 <div class="logo-text">ClickKompakt</div>
-                <p class="tagline">Your gateway to powerful digital products and global affiliate access.</p>
+                <p class="tagline">Premium AI Tools & Global Affiliate Solutions.</p>
             </div>
 
-            <!-- DEUTSCHE SEKTION -->
-            <div class="language-section">
-                <span class="lang-badge">🇩🇪 DE</span>
-                <h2 class="offer-title">AI-Business System™</h2>
-                <p class="offer-desc">Erhalte sofortigen Zugang zu exklusiven Video-Kursen und lerne, wie du automatisierte Systeme mit künstlicher Intelligenz profitabel aufbaust.</p>
-                <ul class="bullets">
-                    <li>🚀 100% anfängerfreundliche Schritt-für-Schritt Videos</li>
-                    <li>🛠️ Nutzung modernster, teils kostenloser KI-Tools</li>
-                    <li>💼 Bereit zum sofortigen Umsetzen und Skalieren</li>
-                </ul>
-                <a href="https://www.digistore24.com/redir/676251/enricoschmidt3500287/" class="cta-button btn-de" target="_blank" rel="noopener">Jetzt Zugang sichern</a>
+            <div class="lang-block">
+                <div class="lang-title">🇩🇪 Deutsche KI-Systeme</div>
+
+                <div class="product-card">
+                    <h2 class="offer-title">AI-Business System™</h2>
+                    <p class="offer-desc">Kompletter Mitgliederbereich und Video-Kurse. Lerne Schritt für Schritt, wie du mit künstlicher Intelligenz ein vollautomatisiertes Online-Business aufbaust.</p>
+                    <a href="https://www.digistore24.com/redir/676251/enricoschmidt3500287/" class="cta-button btn-de" target="_blank" rel="noopener">Zum Video-Kurs</a>
+                </div>
+
+                <div class="product-card">
+                    <h2 class="offer-title">Profitable Salespages mit Claude</h2>
+                    <p class="offer-desc">Erstelle hochkonvertierende Verkaufsseiten mithilfe der KI Claude. Perfekt, um Produkte psychologisch clever im Internet zu vermarkten.</p>
+                    <a href="https://onlinekurse-von-experten.com/salespages-mit-claude-influ04/#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">Strategie freischalten</a>
+                </div>
+
+                <div class="product-card">
+                    <h2 class="offer-title">GEO Traffic – SEO im KI-Zeitalter</h2>
+                    <p class="offer-desc">Der neue Standard für Reichweite. Erfahre, wie du deine Projekte so optimierst, dass sie direkt von KI-Suchmaschinen empfohlen werden.</p>
+                    <a href="https://onlinekurse-von-experten.com/?page_id=8273&preview=true#aff=enricoschmidt3500287" class="cta-button btn-de" target="_blank" rel="noopener">Traffic-System starten</a>
+                </div>
             </div>
 
-            <!-- ENGLISCHE SEKTION -->
-            <div class="language-section">
-                <span class="lang-badge">🇺🇸 EN</span>
-                <h2 class="offer-title">Premium Affiliate Access</h2>
-                <p class="offer-desc">Get instant access to top-tier digital educational materials and automated systems designed to scale globally using AI technology.</p>
-                <ul class="bullets">
-                    <li>📈 Automated systems ready to deploy</li>
-                    <li>💻 High-converting global strategies</li>
-                    <li>💡 No prior technical skills required</li>
-                </ul>
-                <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">Access System Now</a>
+            <div class="lang-block">
+                <div class="lang-title">🇺🇸 International AI Systems</div>
+
+                <div class="product-card">
+                    <h2 class="offer-title">Premium Affiliate Access</h2>
+                    <p class="offer-desc">Get instant access to top-tier digital educational materials and automated systems designed to scale globally using AI technology.</p>
+                    <a href="https://www.checkout-ds24.com/content/543166/49341/enricoschmidt3500287/" class="cta-button btn-en" target="_blank" rel="noopener">Access System Now</a>
+                </div>
             </div>
+
         </div>
     </main>
 
@@ -252,7 +252,6 @@
         </div>
     </footer>
 
-    <!-- UMAMI TRACKING CODE -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca414f-369e-4e5b-bdb8-031dc139d733"></script>
 
 </body>
